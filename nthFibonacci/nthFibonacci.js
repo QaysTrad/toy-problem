@@ -24,6 +24,20 @@ DO NOT use a recursive solution to this problem. Your solution must run in linea
 */
 
 
-nthFibonacci = function(n) {  
- // your code here
+nthFibonacci = function(n) { 
+	var result = 1;
+	var prev = 1
+	var count = 0
+
+	if(n === 1 || n=== 0){
+	return n
+	}
+
+	for(var i = 0 ; i < n-1 ; i++){
+	   result = prev + count;
+	        count = prev;
+	        prev = result;
+
+	}
+	return result
 };
