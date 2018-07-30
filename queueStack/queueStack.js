@@ -4,35 +4,41 @@
 
 
 var Stack = function() {
-	var storage = [];
+  var storage = [];
+  var count = 0 ;
+  this.push = function(v){
+    storage[count] = v 
+    count++
+  };
 
-	this.push = function(){
+  this.pop = function(){
+    count--
+    return storage[count]
+  };
 
-	};
-
-	this.pop = function(){
-
-	};
-
-	this.size = function(){
-
-	};
+  this.size = function(){
+  return  count
+  };
+  this.shift = function(){
+    count = storage.length-1
+    return storage.shift()
+  }
 };
 
 var Queue = function() {
 
-	var inbox = new Stack();
-	var outbox = new Stack();
+  var inbox = new Stack();
+  var outbox = new Stack();
 
-	this.enqueue = function(){
+  this.enqueue = function(v){
+    return inbox.push(v)
+  };
 
-	};
+  this.dequeue = function(){
+      return inbox.shift()
+  };
 
-	this.dequeue = function(){
-		
-	};
-
-	this.size = function(){
-
-	};
+  this.size = function(){
+    return inbox.size()
+  };
 };
