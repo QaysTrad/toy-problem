@@ -12,8 +12,21 @@
 
 
 function evenOccurrence (arr) {
-  // Write your code here, and
-  // return your final answer.
+    var storage = {};
+  for(var j =0; j < arr.length ; j++){
+    storage[arr[j]] = storage[arr[j]] + 1 || 1;
+    
+  }
+
+  for (var i = 0; i < arr.length; i++) {
+    var current = arr[i];
+
+    if (storage[current] % 2 === 0) {
+      return current;
+    }
+  }
+
+  return null;
 }
 
 
